@@ -6,7 +6,7 @@ Terraform module for management Azure Route Tables wchich allow you to create ne
 ```
 module "route-table" {
   source  = "spy86/route-table/azure"
-  version = "1.0.1"
+  version = "1.0.2"
   name  = "dev-routetable"
   resource_group_name  = "weu-test-rg"
   resource_group_location  = "West Europe"
