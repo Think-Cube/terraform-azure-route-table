@@ -1,5 +1,5 @@
 resource "azurerm_route_table" "routetable" {
-  name                       = "${var.environment}-${var.route_table_name}-${var.region}-rt"
+  name                       = "${var.environment}-${var.name}-${var.region}-rt"
   location                   = "${data.azurerm_resource_group.rg.location}"
   resource_group_name        = "${data.azurerm_resource_group.rg.name}"
   dynamic "route" {
