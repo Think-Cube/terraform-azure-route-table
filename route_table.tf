@@ -3,7 +3,7 @@ resource "azurerm_route_table" "routetable" {
   location                   = "${data.azurerm_resource_group.rg.location}"
   resource_group_name        = "${data.azurerm_resource_group.rg.name}"
   dynamic "route" {
-    for_each = var.route_table_routes
+    for_each = var.route_table
     content {
       name                   = route.value.name
       address_prefix         = route.value.address_prefix
