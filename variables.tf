@@ -34,7 +34,7 @@ variable "name" {
   type        = string
   description = "The name of the route table. Changing this forces a new resource to be created."
 }
-variable "route_table_routes" {
+variable "route_table" {
   type        = list(map(string))
   default     = []
   description = "List of objects representing routes. Each object accepts the arguments documented below."
