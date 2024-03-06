@@ -2,35 +2,35 @@
 # Common vars
 ###########################
 variable "environment" {
-  description = "Var used for backend container name key"
-  type = string
-  default = "dev"
+  description = "Variable that defines the name of the environment."
+  type        = string
+  default     = "dev"
 }
 variable "default_tags" {
   description = "A mapping of tags to assign to the resource."
-  type = map
+  type        = map(any)
+  default = {
+    "ManagedByTerraform" = "True"
+  }
 }
 variable "region" {
-  description = "Region in which resources are deployed"
-  type = string
-  default = "weu"
+  description = "Region in which resources are deployed."
+  type        = string
+  default     = "weu"
 }
-###########################
-# Resource groups vars
-###########################
+############################
+#Resource gropus vars
+############################
 variable "resource_group_location" {
-  description = "The location/region where the virtual network is created. Changing this forces a new resource to be created."
-  default = "West Europe"
-  type = string
+  description = "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
 }
 variable "resource_group_name" {
-  description = "The name of the resource group in which to create the virtual network."
-  type = string
+  description = "The name of the resource group in which to create the route table. Changing this forces a new resource to be created."
 }
 ############################
-#ROUTE TABLE variable
+#Route table variable
 ############################
-variable "name" {
+variable "route_table_name" {
   type        = string
   description = "The name of the route table. Changing this forces a new resource to be created."
 }
