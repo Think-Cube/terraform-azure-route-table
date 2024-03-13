@@ -1,7 +1,11 @@
-module "route-table" {
-  source  = "spy86/route-table/azure"
-  version = "1.0.6route_table"
-  name  = "dev-routetable"
+provider "azurerm" {
+features {}
+}
+
+module "route_table" {
+  source  = "Think-Cube/route-table/azure"
+  version = "1.0.0"
+  route_table_name  = "routetable"
   resource_group_name  = "weu-test-rg"
   resource_group_location  = "West Europe"
   environment  = "dev"
@@ -12,4 +16,11 @@ module "route-table" {
     { name = "Route-03", address_prefix = "0.0.0.0/0", next_hop_type = "Internet" }
   ] 
   route_table_disable_bgp_route_propagation = "true"
+  default_tags = {
+      Administrator     = "John Doe"
+      Department        = "IT"
+      CostCentre        = "CC123"
+      ContactPerson     = "Jane Smith"
+      ManagedByTerraform = "True"
+}  
 }
