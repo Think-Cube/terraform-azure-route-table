@@ -1,8 +1,13 @@
+<!-- BEGIN_TF_DOCS -->
 # Example: Basic — Azure Route Table
+
+Provisions an Azure Route Table with configurable routes for network traffic control. Minimal example using required inputs only.
+
+## Usage
 
 ```hcl
 module "route_table" {
-  source = "github.com/Think-Cube/terraform-azure-route-table?ref=v1.0.0"
+  source = "../.."
 
   name                = "rt-myapp-dev"
   resource_group_name = "rg-example"
@@ -12,9 +17,9 @@ module "route_table" {
     environment = "dev"
     managed_by  = "terraform"
   }
-}```
+}
+```
 
-<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -22,25 +27,9 @@ module "route_table" {
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 5.0 |
 
-## Providers
-
-No providers.
-
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_route_table"></a> [route\_table](#module\_route\_table) | github.com/Think-Cube/terraform-azure-route-table | v1.0.0 |
-
-## Resources
-
-No resources.
-
-## Inputs
-
-No inputs.
-
-## Outputs
-
-No outputs.
+| <a name="module_route_table"></a> [route\_table](#module\_route\_table) | ../.. | n/a |
 <!-- END_TF_DOCS -->
